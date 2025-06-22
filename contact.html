@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Parrave Ventures | Get In Touch</title>
+    <meta
+      name="description"
+      content="Contact Parrave Ventures for vending machine solutions. Located in Zirakpur, Punjab. Call +91 98765 43210 or email info@parraveventures.com for free consultation."
+    />
+    <meta
+      name="keywords"
+      content="contact Parrave Ventures, vending machine consultation, Zirakpur office, Punjab"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-brand">
+          <a href="index.html">
+            <h2>Parrave Ventures</h2>
+          </a>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          </ul>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Get in touch for a free consultation and demo</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-content">
+          <!-- Contact Form -->
+          <div class="contact-form-container">
+            <h2>Send Us a Message</h2>
+            <p>
+              Fill out the form below and we'll get back to you within 24 hours.
+            </p>
+
+            <form class="contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" />
+                </div>
+                <div class="form-group">
+                  <label for="company">Company/Organization</label>
+                  <input type="text" id="company" name="company" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="location">Location Type</label>
+                <select id="location" name="location">
+                  <option value="">Select Location Type</option>
+                  <option value="university">University/College</option>
+                  <option value="metro">Metro Station</option>
+                  <option value="corporate">Corporate Office</option>
+                  <option value="hotel">Hotel/Resort</option>
+                  <option value="residential">Residential Society</option>
+                  <option value="hospital">Hospital/Clinic</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Tell us about your requirements, location details, expected footfall, etc."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="contact-info-container">
+            <h2>Get In Touch</h2>
+            <p>
+              Ready to bring convenient vending solutions to your location?
+              Contact us today!
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Office Address</h4>
+                  <p>
+                    Zirakpur, Punjab, India<br />
+                    Near Chandigarh
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Phone Number</h4>
+                  <p>
+                    <a href="tel:+919876543210">+91 98765 43210</a><br />
+                    <small>Available 24/7 for support</small>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Email Address</h4>
+                  <p>
+                    <a href="mailto:info@parraveventures.com"
+                      >info@parraveventures.com</a
+                    ><br />
+                    <small>We respond within 24 hours</small>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Business Hours</h4>
+                  <p>
+                    Monday - Saturday: 9:00 AM - 6:00 PM<br />
+                    <small>Emergency support available 24/7</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-contact">
+              <h4>Follow Us</h4>
+              <div class="social-links">
+                <a href="#" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="Facebook"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                <a href="#" aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Common questions about our vending solutions</p>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>How much does it cost to install a vending machine?</h4>
+            <p>
+              There's no cost to you! We handle all expenses including machine
+              purchase, installation, and ongoing maintenance. We operate on a
+              revenue-sharing model.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h4>What locations are suitable for vending machines?</h4>
+            <p>
+              We install in universities, metro stations, corporate offices,
+              hotels, residential societies, hospitals, and any high-traffic
+              areas with good footfall.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h4>How do I get support for machine issues?</h4>
+            <p>
+              We provide 24/7 technical support. Simply call our support number
+              or use our mobile app to report any issues for immediate
+              assistance.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h4>What products do you stock in the machines?</h4>
+            <p>
+              We offer a curated selection of snacks, beverages, and
+              refreshments based on your location's demographics and customer
+              preferences.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h4>How often are the machines restocked?</h4>
+            <p>
+              We monitor inventory levels remotely and restock machines based on
+              demand, typically 2-3 times per week or as needed.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h4>Can the machines be customized with our branding?</h4>
+            <p>
+              Yes! We offer custom vinyl wrapping and display customization to
+              match your brand colors, logos, and location aesthetics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Find Our Office</h2>
+          <p>Visit us at our Zirakpur location</p>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27397.586308588744!2d76.81805305!3d30.6423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fee906da57b61%3A0x77e90b0b1c7d7b94!2sZirakpur%2C%20Punjab!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
+            width="100%"
+            height="400"
+            style="border: 0; border-radius: 12px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Get Started?</h2>
+          <p>
+            Let's discuss how our vending solutions can benefit your location
+            and visitors.
+          </p>
+          <div class="cta-buttons">
+            <a href="tel:+919876543210" class="btn btn-primary">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+            <a href="mailto:info@parraveventures.com" class="btn btn-outline">
+              <i class="fas fa-envelope"></i> Send Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Parrave Ventures</h3>
+            <p>
+              Leading vending machine operator providing innovative solutions
+              across India.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html">Machine Installation</a></li>
+              <li><a href="services.html">Operation & Maintenance</a></li>
+              <li><a href="services.html">Custom Branding</a></li>
+              <li><a href="services.html">Product Sourcing</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab, India
+              </p>
+              <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+              <p><i class="fas fa-envelope"></i> info@parraveventures.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Parrave Ventures Private Limited. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
