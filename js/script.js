@@ -1,29 +1,35 @@
 // Mobile Navigation Toggle
-const hamburger = document.getElementById("hamburger");
+const mobileToggle = document.getElementById("mobile-toggle");
 const navMenu = document.getElementById("nav-menu");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-});
+if (mobileToggle) {
+  mobileToggle.addEventListener("click", () => {
+    mobileToggle.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+}
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll(".nav-link").forEach((link) => {
+document.querySelectorAll(".nav-pill").forEach((link) => {
   link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
+    if (mobileToggle) {
+      mobileToggle.classList.remove("active");
+    }
     navMenu.classList.remove("active");
   });
 });
 
-// Navbar scroll effect
+// Modern navbar scroll effect
 window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 100) {
-    navbar.style.backgroundColor = "rgba(255, 255, 255, 0.98)";
-    navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.15)";
-  } else {
-    navbar.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
-    navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+  const navbar = document.querySelector(".modern-navbar");
+  if (navbar) {
+    if (window.scrollY > 100) {
+      navbar.style.background = "rgba(255, 255, 255, 0.15)";
+      navbar.style.borderBottom = "1px solid rgba(255, 255, 255, 0.3)";
+    } else {
+      navbar.style.background = "rgba(255, 255, 255, 0.1)";
+      navbar.style.borderBottom = "1px solid rgba(255, 255, 255, 0.2)";
+    }
   }
 });
 
@@ -59,7 +65,7 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for animation
 document.addEventListener("DOMContentLoaded", () => {
   const animateElements = document.querySelectorAll(
-    ".feature-card, .location-card, .services-content",
+    ".feature-card, .location-card, .services-content, .floating-card",
   );
 
   animateElements.forEach((el) => {
@@ -67,6 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
     el.style.transform = "translateY(30px)";
     el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
     observer.observe(el);
+  });
+
+  // Add staggered animation for floating cards
+  const floatingCards = document.querySelectorAll(".floating-card");
+  floatingCards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.5}s`;
   });
 });
 
@@ -94,7 +106,7 @@ function handleFormSubmit(event) {
 // Active navigation link highlighting
 function updateActiveNavLink() {
   const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const navLinks = document.querySelectorAll(".nav-pill");
 
   let current = "";
   sections.forEach((section) => {
@@ -107,7 +119,10 @@ function updateActiveNavLink() {
 
   navLinks.forEach((link) => {
     link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
+    if (
+      link.getAttribute("href") === `#${current}` ||
+      (current === "" && link.getAttribute("href") === "index.html")
+    ) {
       link.classList.add("active");
     }
   });
@@ -154,7 +169,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Initialize everything when DOM is loaded
+// Hero animations on load
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Parrave Ventures website loaded successfully!");
 
@@ -165,7 +180,43 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.body.style.opacity = "1";
   }, 100);
+
+  // Animate hero stats on scroll
+  const heroStats = document.querySelectorAll(".stat-number");
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        const targetValue = parseInt(target.textContent);
+        animateCounter(target, 0, targetValue, 2000);
+        statsObserver.unobserve(target);
+      }
+    });
+  });
+
+  heroStats.forEach((stat) => {
+    statsObserver.observe(stat);
+  });
 });
+
+// Counter animation function
+function animateCounter(element, start, end, duration) {
+  const startTime = Date.now();
+  const originalText = element.textContent;
+
+  const timer = setInterval(() => {
+    const now = Date.now();
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    const current = Math.floor(start + (end - start) * progress);
+    element.textContent = current + originalText.replace(/\d+/, "");
+
+    if (progress === 1) {
+      clearInterval(timer);
+    }
+  }, 16);
+}
 
 // Utility function for debouncing
 function debounce(func, wait) {
