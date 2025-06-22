@@ -32,29 +32,58 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Modern Navigation -->
+    <nav class="modern-navbar">
       <div class="container">
-        <div class="nav-brand">
-          <a href="index.html">
-            <h2>Parrave Ventures</h2>
-          </a>
-        </div>
-        <div class="nav-menu" id="nav-menu">
-          <ul class="nav-list">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About Us</a></li>
-            <li><a href="services.html" class="nav-link">Services</a></li>
-            <li>
-              <a href="projects.html" class="nav-link active">Projects</a>
-            </li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
-        </div>
-        <div class="hamburger" id="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <div class="nav-container">
+          <div class="nav-brand">
+            <a href="index.html">
+              <div class="brand-icon">
+                <i class="fas fa-cube"></i>
+              </div>
+              <div class="brand-text">
+                <span class="brand-name">Parrave</span>
+                <span class="brand-tagline">Ventures</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="nav-menu" id="nav-menu">
+            <div class="nav-pills">
+              <a href="index.html" class="nav-pill">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+              </a>
+              <a href="about.html" class="nav-pill">
+                <i class="fas fa-users"></i>
+                <span>About</span>
+              </a>
+              <a href="services.html" class="nav-pill">
+                <i class="fas fa-cogs"></i>
+                <span>Services</span>
+              </a>
+              <a href="projects.html" class="nav-pill active">
+                <i class="fas fa-briefcase"></i>
+                <span>Projects</span>
+              </a>
+              <a href="contact.html" class="nav-pill">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+              </a>
+            </div>
+            <div class="nav-cta">
+              <a href="contact.html" class="cta-button">
+                <span>Get Demo</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="mobile-menu-toggle" id="mobile-toggle">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </div>
         </div>
       </div>
     </nav>
