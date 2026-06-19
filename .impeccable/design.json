@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-19T09:30:00Z",
+  "title": "Design System: Parrave Ventures",
+  "extensions": {
+    "colorMeta": {
+      "primary-blue": {
+        "role": "primary",
+        "displayName": "Navy Blue (Corporate - To Replace)",
+        "canonical": "oklch(24% 0.08 247)",
+        "tonalRamp": [
+          "oklch(15% 0.08 247)",
+          "oklch(20% 0.08 247)",
+          "oklch(24% 0.08 247)",
+          "oklch(35% 0.08 247)",
+          "oklch(50% 0.08 247)",
+          "oklch(70% 0.08 247)",
+          "oklch(85% 0.08 247)",
+          "oklch(95% 0.08 247)"
+        ]
+      },
+      "accent-yellow": {
+        "role": "accent",
+        "displayName": "Warning Yellow (Generic - To Replace)",
+        "canonical": "oklch(87% 0.18 95)",
+        "tonalRamp": [
+          "oklch(25% 0.18 95)",
+          "oklch(40% 0.18 95)",
+          "oklch(55% 0.18 95)",
+          "oklch(70% 0.18 95)",
+          "oklch(87% 0.18 95)",
+          "oklch(90% 0.18 95)",
+          "oklch(95% 0.18 95)",
+          "oklch(98% 0.18 95)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Off-White",
+        "canonical": "oklch(98% 0 0)",
+        "tonalRamp": ["oklch(98% 0 0)"]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Dark Gray",
+        "canonical": "oklch(27% 0 0)",
+        "tonalRamp": ["oklch(27% 0 0)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headlines only. Poppins bold - competent but generic."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraph text. Inter - web default, doesn't differentiate."
+      }
+    },
+    "shadows": [
+      {
+        "name": "base",
+        "value": "0 4px 6px rgba(0, 0, 0, 0.1)",
+        "purpose": "Default card shadow. Soft and safe."
+      },
+      {
+        "name": "hover",
+        "value": "0 8px 15px rgba(0, 0, 0, 0.15)",
+        "purpose": "Interactive hover lift. Standard pattern."
+      },
+      {
+        "name": "section-lift",
+        "value": "0 10px 30px rgba(0, 53, 102, 0.08)",
+        "purpose": "Feature cards with blue tint. Nice detail but overused."
+      },
+      {
+        "name": "hero-emphasis",
+        "value": "0 20px 60px rgba(0, 53, 102, 0.15)",
+        "purpose": "Large images, dramatic depth. Getting heavy."
+      }
+    ],
+    "motion": [
+      {
+        "name": "standard",
+        "value": "all 0.3s ease",
+        "purpose": "Default transition. Generic easing."
+      },
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Recommended for future: exponential ease-out for natural motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "768px"
+      },
+      {
+        "name": "tablet",
+        "value": "992px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Navy blue primary action button. Generic corporate style.",
+      "html": "<button class=\"ds-btn-primary\">Get Started</button>",
+      "css": ".ds-btn-primary { background: #003566; color: #ffffff; padding: 1rem 2rem; border: none; border-radius: 15px; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; } .ds-btn-primary:hover { background: #004578; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); transform: translateY(-2px); } .ds-btn-primary:active { transform: translateY(0); }"
+    },
+    {
+      "name": "CTA Button (Yellow)",
+      "kind": "button",
+      "refersTo": "button-cta",
+      "description": "High-contrast yellow accent button. Visually jarring.",
+      "html": "<button class=\"ds-btn-cta\">Get Demo</button>",
+      "css": ".ds-btn-cta { background: #ffd60a; color: #003566; padding: 1rem 1.5rem; border: none; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; } .ds-btn-cta:hover { background: #ffed4e; transform: scale(1.05); }"
+    },
+    {
+      "name": "Feature Card",
+      "kind": "card",
+      "refersTo": "feature-card",
+      "description": "Standard rounded card with shadow. Used everywhere - no distinction.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-icon\"><svg width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/></svg></div><h3>24/7 Convenience</h3><p>Round-the-clock access to snacks, beverages, and essentials.</p></div>",
+      "css": ".ds-card { background: #ffffff; padding: 2.5rem 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 53, 102, 0.08); transition: all 0.4s ease; border: 1px solid rgba(0, 53, 102, 0.05); } .ds-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 53, 102, 0.15); } .ds-card-icon { width: 70px; height: 70px; background: linear-gradient(135deg, #003566, #0056b3); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: #ffffff; } .ds-card h3 { color: #003566; font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; } .ds-card p { color: #333333; line-height: 1.6; }"
+    },
+    {
+      "name": "Stat Counter",
+      "kind": "custom",
+      "refersTo": "stat-box",
+      "description": "Glassmorphism stat box on gradient background. 2024 SaaS template effect.",
+      "html": "<div class=\"ds-stat-wrapper\"><div class=\"ds-stat-box\"><div class=\"ds-stat-icon\"><svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6\"/></svg></div><div class=\"ds-stat-number\">100+</div><div class=\"ds-stat-label\">Smart Machines</div></div></div>",
+      "css": ".ds-stat-wrapper { background: linear-gradient(135deg, #003566 0%, #004578 100%); padding: 3rem 2rem; } .ds-stat-box { text-align: center; color: #ffffff; padding: 2rem; background: rgba(255, 255, 255, 0.08); border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15); } .ds-stat-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.9; } .ds-stat-number { font-size: 3.5rem; font-weight: 700; font-family: 'Poppins', sans-serif; margin: 1rem 0; background: linear-gradient(135deg, #ffffff, #ffd60a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; } .ds-stat-label { font-size: 1.1rem; opacity: 0.9; font-weight: 500; }"
+    },
+    {
+      "name": "Chip/Badge",
+      "kind": "chip",
+      "refersTo": "category-brand",
+      "description": "Small pill-shaped tag for metadata. Standard pattern.",
+      "html": "<span class=\"ds-chip\">Coca-Cola</span>",
+      "css": ".ds-chip { background: #f8f9fa; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; color: #003566; font-weight: 500; display: inline-block; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Smart Operator (target - not current)",
+    "overview": "The existing design uses a corporate blue-and-yellow palette (#003566 / #ffd60a) with Poppins headings and Inter body text. The visual system leans heavily on gradients, glassmorphism, and modern card-based layouts common to 2023-2025 SaaS marketing sites. TARGET: The design should feel tech-forward, data-driven, and operationally efficient - like a modern logistics dashboard meets premium service branding. Think smart city infrastructure, real-time monitoring systems, and precision operations, not generic B2B corporate.",
+    "keyCharacteristics": [
+      "Tech-forward without being flashy",
+      "Data-driven confidence (metrics, precision, analytics)",
+      "Operational clarity (efficiency, reliability, 24/7 positioning)",
+      "Premium service quality (not consumer-grade or industrial)"
+    ],
+    "rules": [
+      {
+        "name": "The Gradient Overuse Problem",
+        "body": "The current system defaults to gradients everywhere - hero backgrounds, buttons, stats sections. This is the 2023-2025 SaaS template reflex. The next iteration should use gradients sparingly and intentionally, not as texture.",
+        "section": "colors"
+      },
+      {
+        "name": "The Color Strategy Gap",
+        "body": "The palette needs to move from 'restrained corporate' to 'committed tech-forward.' A single saturated brand color should carry 30-60% of key surfaces, replacing the navy-yellow split.",
+        "section": "colors"
+      },
+      {
+        "name": "The Default Font Problem",
+        "body": "Poppins + Inter is the 2023-2026 landing page standard. It's everywhere because it's safe, not because it's distinctive. 'Smart operator' positioning needs either: (a) a technical/monospace accent (data-driven precision), (b) a sharper geometric sans (operational efficiency), or (c) a condensed display with punch (command attention).",
+        "section": "typography"
+      },
+      {
+        "name": "The Shadow Everywhere Problem",
+        "body": "Every surface has a shadow, making depth feel uniform rather than intentional. A 'smart operator' system should use shadows structurally (modals, dropdowns, true elevation) not decoratively (every card by default).",
+        "section": "elevation"
+      },
+      {
+        "name": "The Card Grid Problem",
+        "body": "The homepage is: hero → 4-card grid → stats section → 4-card grid → 4-step cards → 6-card grid → 3-card grid → FAQ accordion. Every section is a card grid. This is the landing page default structure, not a distinctive layout.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do maintain WCAG 2.1 AA contrast (4.5:1 body text, 3:1 large text)",
+      "Do keep line-height at 1.6+ for body text",
+      "Do use semantic HTML and proper ARIA labels",
+      "Do provide reduced-motion alternatives for animations"
+    ],
+    "donts": [
+      "Don't use the navy-yellow pairing (#003566 / #ffd60a) going forward. It's the generic B2B default and doesn't convey 'smart operator' positioning.",
+      "Don't default to card grids for every section. The current homepage is 90% cards. Layout variety creates hierarchy.",
+      "Don't use backdrop-blur glassmorphism as default texture. It's saturated across 2024-2025 landing pages.",
+      "Don't use gradients everywhere. Current system has gradient backgrounds in hero, stats, how-it-works, and multiple button states.",
+      "Don't pair Poppins + Inter without strategic reason. It's the 2023-2026 landing page default.",
+      "Don't use border-left accent stripes on cards. Absolute ban.",
+      "Don't use numbered section markers (01 · 02 · 03) above every section as scaffolding.",
+      "Don't drift toward cream/sand/parchment body backgrounds (OKLCH L 0.88-0.95, chroma < 0.06, hue 50-80)."
+    ]
+  }
+}

@@ -237,3 +237,118 @@ function debounce(func, wait) {
 const debouncedScrollHandler = debounce(() => {
   updateActiveNavLink();
 }, 10);
+
+// FAQ Accordion functionality with keyboard support
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+      toggleFAQ(item, question);
+    });
+
+    // Keyboard support
+    question.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleFAQ(item, question);
+      }
+    });
+  });
+
+  function toggleFAQ(item, question) {
+    const isActive = item.classList.contains("active");
+
+    // Close all FAQ items
+    faqItems.forEach((faq) => {
+      faq.classList.remove("active");
+      const btn = faq.querySelector(".faq-question");
+      if (btn) {
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Toggle current item
+    if (!isActive) {
+      item.classList.add("active");
+      question.setAttribute("aria-expanded", "true");
+    }
+  }
+});
+
+// Animated counter for statistics
+document.addEventListener("DOMContentLoaded", () => {
+  const statNumbers = document.querySelectorAll(".stats-counter .stat-number");
+
+  const animateValue = (element, start, end, duration, suffix = "") => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const value = Math.floor(progress * (end - start) + start);
+      element.textContent = value.toLocaleString() + suffix;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  };
+
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          const targetValue = parseInt(
+            element.getAttribute("data-target") || element.textContent
+          );
+          const text = element.textContent;
+          const suffix = text.includes("+")
+            ? "+"
+            : text.includes("%")
+            ? "%"
+            : "";
+
+          animateValue(element, 0, targetValue, 2000, suffix);
+          statsObserver.unobserve(element);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  statNumbers.forEach((stat) => {
+    statsObserver.observe(stat);
+  });
+});
+
+// Scroll reveal animations for new sections
+document.addEventListener("DOMContentLoaded", () => {
+  const revealElements = document.querySelectorAll(
+    ".benefit-item, .process-step, .tech-feature, .category-card, .testimonial-card"
+  );
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }, index * 100);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  revealElements.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    revealObserver.observe(el);
+  });
+});
