@@ -390,6 +390,39 @@ User feedback prompted four changes:
 
 Commit: `bda2490 — Hero machine illustration, faster mobile marquee, info@ email, real form`
 
+### Session 6 — Machine SVG accuracy fix (~13:55 IST)
+
+User shared two reference photos:
+- `~/parrave/parrave-tcn-machine.png` (clean product render)
+- `~/parrave/parrave-vending-machine.jpeg` (actual deployed machine)
+
+Confirmed the real Parrave machine has a very different anatomy from
+my session-5 illustration:
+
+| What I drew | What it actually is |
+| --- | --- |
+| Big horizontal 52" display at top | No external display — touchscreen on side cabinet only |
+| Single rounded body | Two clearly separate panes: glass cabinet + black side cabinet |
+| Pickup tray bottom-right | Central PUSH hopper below the glass area, with bright orange flap |
+| Generic black exterior | Silver/aluminum-framed lit glass + matte black side cabinet |
+
+Rebuilt the SVG (`viewBox 360 × 540`):
+- **Left pane**: aluminum frame, lit glass interior, 6 shelves with
+  realistic product silhouettes (chips, donuts, dairy, energy drinks,
+  water bottles) on black price strips with coil numbers `01, 03, 05…`
+  in lime — matching the real machine's labelling
+- **Hopper section**: black band beneath glass, large `PUSH` label,
+  bright orange flap door with handle indent — exactly as in the photo
+- **Right pane**: black side cabinet with camera dot, portrait
+  touchscreen running an animated 'Select Products' product grid,
+  cart/Pay-UPI bar, key lock, two orange square buttons, and small
+  Parrave wordmark at the base
+- 4 small feet at the bottom
+- Replaced obsolete `m-bar` animation with a `m-screen-grid` scan
+  highlight; tightened `m-live` pulse for the smaller dot
+
+Commit: `4c8b3f9 — Redesign hero machine SVG to match real Parrave machine anatomy`
+
 ---
 
 ## 10. Git state & deployment
@@ -503,4 +536,4 @@ While no `action` is configured, hitting Submit:
 
 ---
 
-_Last updated: 2026-06-20, end of session 5._
+_Last updated: 2026-06-20, end of session 6._
