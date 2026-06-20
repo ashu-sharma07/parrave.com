@@ -136,9 +136,9 @@ parrave.com/
 ├── CNAME                          # 'parrave.com' — GitHub Pages custom domain
 ├── README.md                      # public README (minimal)
 ├── PROJECT.md                     # this file — internal docs
-├── index.html                     # 522 lines, single-page site
-├── styles.css                     # 1044 lines, single stylesheet
-├── script.js                      # 157 lines, vanilla JS, no deps
+├── index.html                     # ~650 lines, single-page site
+├── styles.css                     # ~1150 lines, single stylesheet
+├── script.js                      # ~225 lines, vanilla JS, no deps
 └── assets/
     ├── favicon.svg                # 24×24 logo-mark (gradient + dark inset)
     └── apple-touch-icon.svg       # 180×180 with dark backdrop for iOS
@@ -202,17 +202,35 @@ triggers `script.js` to:
 
 `ROLE_COPY` in `script.js` defines the per-role messaging.
 
-### 6.4 Form submit (placeholder)
+### 6.4 Form submit
 
-Currently logs to console and disables the form with a thank-you note.
-**To go live**, swap the handler in `script.js` for a `fetch()` to:
+The form supports **two delivery modes**, switchable without touching JS:
 
-- Formspree (`https://formspree.io/f/XXXX`)
-- Resend / your backend
-- A Google Apps Script web app
-- Notion API (via a thin proxy)
+**Mode A — Backend (recommended for production)**
 
-Form payload keys: `role`, `name`, `email`, `org`, `message`.
+Set the form's `action` attribute to an endpoint that accepts JSON
+POST and forwards to email:
+
+```html
+<form id="contactForm" action="https://formspree.io/f/YOUR_ID" method="POST" novalidate>
+```
+
+`script.js` will detect the URL and `fetch()` POST a JSON body
+(`role`, `name`, `email`, `org`, `message`) with `Content-Type:
+application/json`. On success, shows the thank-you message; on
+network failure, falls back to mailto.
+
+**Mode B — Mailto fallback (default)**
+
+If `action` is empty or `#`, the form opens the user's email client
+with a pre-filled message addressed to `info@parrave.com`:
+
+- Subject: `[Parrave website] {role} inquiry — {name}`
+- Body: structured fields (Role, Name, Email, Company, Message)
+
+This is what's live right now (no backend signup needed).
+
+**See §13 for setup instructions** on switching from Mode B to Mode A.
 
 ### 6.5 Visual ad-display mockups
 
@@ -334,6 +352,44 @@ Commit: `28c6c60 — Use logo-mark as favicon, real traction numbers, positive f
 
 Created this `PROJECT.md` to capture context, decisions, and history.
 
+### Session 5 — Hero machine, mobile marquee, info@ email, form wiring (~13:35 IST)
+
+User feedback prompted four changes:
+
+1. **Marquee speed on mobile** — the "Live on campus at" university
+   marquee was set to a fixed `32s` cycle and felt sluggish on phone.
+   Refactored to use a CSS variable `--marquee-duration` and stepped
+   it down per viewport: **32s desktop / 22s ≤980px / 16s ≤560px**.
+   Also tightened font-size and gap on small screens.
+
+2. **Vending machine graphic** — added a stylized inline SVG vending
+   machine illustration in the hero. Restructured the hero into a
+   2-column grid (content left, machine right; metrics span both).
+   The machine includes:
+   - Top 52" hero display with animated bars, live dot, and Parrave
+     wordmark on screen
+   - Glass product window with 4 shelves of colored products
+   - Faint vertical coil hints between products (references our
+     coil-rentals product)
+   - Touch/payment panel with mini-screen, UPI tap target, and
+     "TAP · UPI" label
+   - Pickup tray on the right of the bottom panel
+   - Two floating glassmorphic badges around the machine: "IoT · Live"
+     (top-left) and "UPI · Cashless" (bottom-right)
+   On phones: machine scales to 220px and one badge is hidden to
+   reduce clutter.
+
+3. **Email change** — `hello@parrave.com` → **`info@parrave.com`**
+   in both the contact section and the footer.
+
+4. **Functional contact form** — replaced the demo console-logging
+   handler with a real submission flow that supports two modes
+   (see §6.4 below). Default behavior opens the user's email client
+   pre-filled to `info@parrave.com`. Once a backend endpoint is
+   added to the `<form action="...">`, it switches to AJAX POST.
+
+Commit: `bda2490 — Hero machine illustration, faster mobile marquee, info@ email, real form`
+
 ---
 
 ## 10. Git state & deployment
@@ -367,7 +423,7 @@ Surfaced during the build but **not implemented**:
 - [ ] Replace placeholder logo-mark with a finalized brand SVG (if Parrave has a more refined mark)
 - [ ] Real photography of machines on campus → "Machines in the wild" gallery
 - [ ] Replace text brand-chips with actual brand logos (with permission)
-- [ ] Wire contact form to a real backend (Formspree / Resend / Notion / custom)
+- [ ] Wire contact form to a real backend (mailto fallback shipped — see §13 to upgrade to Formspree)
 - [ ] Add an `/investors` deeper page with deck download + data room link
 - [ ] OG image for social sharing (`og:image` + `twitter:card`)
 - [ ] Sitemap + robots.txt for SEO
@@ -389,4 +445,62 @@ That's the entire dev workflow. No watcher, no build, no install step.
 
 ---
 
-_Last updated: 2026-06-20, end of session 4._
+## 13. Making the contact form actually receive submissions
+
+The form is wired with a sensible default (mailto fallback) and can be
+upgraded to a real backend in **5 minutes** with no code changes
+beyond a single attribute on the `<form>` tag.
+
+### Recommended: Formspree (simplest, free tier covers early stage)
+
+1. Sign up at https://formspree.io/ with the address that should
+   **receive** the inquiries — i.e. `info@parrave.com`
+2. Verify the email
+3. Create a new form. Formspree gives you an endpoint like
+   `https://formspree.io/f/abcd1234`
+4. Open `index.html` and change:
+   ```html
+   <form class="contact__form reveal" id="contactForm" novalidate>
+   ```
+   to:
+   ```html
+   <form class="contact__form reveal" id="contactForm"
+         action="https://formspree.io/f/abcd1234"
+         method="POST" novalidate>
+   ```
+5. Commit + push. The next form submission will land in
+   `info@parrave.com` automatically.
+
+The JS already detects the `action` URL and POSTs JSON via `fetch`.
+On success it shows the thank-you note; on failure it falls back to
+opening the email client.
+
+### Alternatives (same wiring works)
+
+- **Web3Forms** — `https://api.web3forms.com/submit` (free, similar to Formspree)
+- **Resend** — needs a tiny serverless function but gives full email control
+- **Google Apps Script web app** — free, writes to a Google Sheet and emails
+- **Custom backend** — any endpoint that accepts JSON POST works
+
+### Mailto fallback (current, no signup)
+
+While no `action` is configured, hitting Submit:
+
+1. Validates all required fields (HTML5 validation)
+2. Builds a `mailto:info@parrave.com` link with subject and body
+3. Opens the visitor's email client (Gmail / Outlook / Apple Mail / etc.)
+4. The visitor still has to hit "Send" in their email app — so it's
+   one extra step versus a real backend, but it works on day one with
+   zero infrastructure
+
+### Notes on email deliverability
+
+- Once you have the form working with Formspree, set up an SPF / DKIM
+  record on `parrave.com` so emails forwarded from Formspree don't
+  land in spam
+- Consider creating an inbox or alias `info@parrave.com` with auto-routing
+  to the right team member (sales / partnerships / IR)
+
+---
+
+_Last updated: 2026-06-20, end of session 5._
