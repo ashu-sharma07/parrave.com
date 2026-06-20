@@ -363,7 +363,7 @@ ul, ol { list-style: none; }
 }
 .machine-badge--upi {
   bottom: 22%;
-  right: -6%;
+  right: -14%;
   animation: badge-float-2 8s ease-in-out infinite;
 }
 .machine-badge__dot {
