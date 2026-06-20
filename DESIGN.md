@@ -1,210 +1,109 @@
+<!-- SEED: re-run /impeccable document once there's code to capture the actual tokens and components. -->
+
 ---
 name: Parrave Ventures
-description: Smart vending machine operator marketing site
-colors:
-  primary-blue: "#003566"
-  primary-blue-mid: "#004578"
-  primary-blue-light: "#0056b3"
-  accent-yellow: "#ffd60a"
-  accent-yellow-light: "#ffed4e"
-  background: "#f9f9f9"
-  surface: "#ffffff"
-  surface-gray: "#f8f9fa"
-  text: "#333333"
-  border: "#e9ecef"
-typography:
-  display:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "clamp(2.5rem, 7vw, 4rem)"
-    fontWeight: 700
-    lineHeight: 1.1
-  headline:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "2.5rem"
-    fontWeight: 600
-    lineHeight: 1.2
-  title:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "2rem"
-    fontWeight: 600
-    lineHeight: 1.2
-  body:
-    fontFamily: "Inter, sans-serif"
-    fontSize: "1rem"
-    fontWeight: 400
-    lineHeight: 1.6
-  label:
-    fontFamily: "Inter, sans-serif"
-    fontSize: "0.9rem"
-    fontWeight: 500
-    letterSpacing: "normal"
-rounded:
-  sm: "8px"
-  md: "15px"
-  lg: "20px"
-  xl: "25px"
-  pill: "50px"
-spacing:
-  sm: "0.5rem"
-  md: "1rem"
-  lg: "2rem"
-  xl: "3rem"
-components:
-  button-primary:
-    backgroundColor: "{colors.primary-blue}"
-    textColor: "{colors.surface}"
-    rounded: "{rounded.md}"
-    padding: "1rem 2rem"
-  button-cta:
-    backgroundColor: "{colors.accent-yellow}"
-    textColor: "{colors.primary-blue}"
-    rounded: "{rounded.pill}"
-    padding: "1rem 1.5rem"
+description: Smart vending machine operator brand site for location partners, brand partnerships, and investors
 ---
-
-<!-- CURRENT STATE: This documents the existing design that needs improvement. User feedback: blue/yellow feels generic and corporate. Target: "The Smart Operator" - tech-forward, data-driven, efficient. -->
 
 # Design System: Parrave Ventures
 
 ## 1. Overview
 
-**Creative North Star: "The Smart Operator"** *(target, not current)*
+**Creative North Star: "The Campus Energy Exchange"**
 
-*Current state:* The existing design uses a corporate blue-and-yellow palette (#003566 / #ffd60a) with Poppins headings and Inter body text. The visual system leans heavily on gradients, glassmorphism, and modern card-based layouts common to 2023-2025 SaaS marketing sites.
+Parrave is where smart infrastructure meets young energy. The design embodies forward momentum—modern, confident, approachable—without falling into generic SaaS territory or cold tech-clinical aesthetics. Think: the startup that's already building real things in real places, not pitching vapor. 
 
-*Target evolution:* The design should feel **tech-forward, data-driven, and operationally efficient** - like a modern logistics dashboard meets premium service branding. Think smart city infrastructure, real-time monitoring systems, and precision operations, not generic B2B corporate.
+The color strategy is **committed**: one saturated brand color (energetic coral-orange) carries 30-60% of the surface, anchoring the identity with bold presence and startup energy. Typography is a single versatile modern sans-serif family deployed across multiple weights—clean and approachable, tech-forward without coldness. Motion is **responsive**: interactions provide feedback, transitions feel polished and alive, but nothing distracts from the message. 
 
-**Current Anti-patterns (to be resolved):**
-- **Generic SaaS template aesthetic**: Blue-white gradient heroes, floating cards, stock photography feel
-- **Corporate blandness**: The blue (#003566) + yellow (#ffd60a) combination reads as safe/predictable
-- **Weak visual hierarchy**: Sections blend together; nothing commands attention
+This is NOT the warm-cream-bg SaaS aesthetic of 2023. This is NOT a legacy manufacturing catalog. This is NOT a soulless metrics dashboard. It's a brand site with startup confidence, real traction (50+ machines, recognizable partners, premium locations), and a three-door structure: location partners, brand advertisers, and investors each get a clear pathway.
 
-**Key Characteristics (target):**
-- Tech-forward without being flashy
-- Data-driven confidence (metrics, precision, analytics)
-- Operational clarity (efficiency, reliability, 24/7 positioning)
-- Premium service quality (not consumer-grade or industrial)
+**Key Characteristics:**
+- Bold, saturated brand color as the visual anchor
+- Clean modern sans-serif typography without tech coldness
+- Responsive interactions that feel polished and alive
+- Three-audience clarity: locations, brands, investors
+- Campus-first context: young, premium, worth talking about
+- Real traction signals over generic promises
 
-## 2. Colors: The Corporate Standard (Current - Needs Replacement)
+## 2. Colors
 
-The current palette uses navy blue as primary and yellow as accent - a common corporate pairing that feels generic and doesn't convey the "smart operator" positioning.
+The palette is anchored by an energetic coral-orange primary (derived from oklch(0.570 0.158 353.3) seed) that carries startup confidence without tipping into pure-tech blue or legacy corporate. Background is pure white—not cream, not warm-tinted—letting the primary do the expressive work. Accent is a complementary cool tone for badges and status indicators.
 
-### Primary (Current)
-- **Navy Blue** (#003566 / oklch(24% 0.08 247)): Primary brand color used heavily throughout - buttons, headings, nav. *Issue: Too dark and corporate, lacks the tech-forward energy.*
-- **Mid Blue** (#004578): Gradient mid-point. *Part of the gradient-heavy approach that feels templated.*
-- **Light Blue** (#0056b3): Gradient highlight. *Brighter but still generic blue territory.*
+### Primary
+- **Energetic Coral-Orange** [to be resolved during implementation, anchored around hue 353° with adjusted lightness and chroma for optimal readability and energy]: Primary brand color. Used for CTAs, hero accents, section highlights, key interaction states. Carries 30-60% of visual surface. Must support white text (WCAG AA on filled buttons/badges).
 
-### Accent (Current)
-- **Warning Yellow** (#ffd60a / oklch(87% 0.18 95)): High-contrast accent for CTAs and highlights. *Issue: Reads as caution/warning more than premium or tech. Common SaaS pairing.*
-- **Light Yellow** (#ffed4e): Gradient complement. *Washing out toward cream territory.*
+### Neutral
+- **Pure White** [oklch(1.000 0.000 0)]: Body background. Literally #ffffff—no hidden warmth, no tint. Stripe/Notion/Linear default. The brand color does the expressive work; the surface stays pure.
+- **Surface** [to be resolved: bg pulled 10-15% toward ink, same hue family]: Cards, panels, elevated sections.
+- **Ink** [to be resolved: ≥7:1 contrast vs bg, slight warmth toward brand hue at low chroma]: Body text color.
+- **Muted** [to be resolved: ink pulled 40% toward bg, ≥3.5:1 contrast]: Secondary text, captions, labels.
 
-### Neutral (Current)
-- **Off-White Background** (#f9f9f9 / oklch(98% 0 0)): Body background. *Safe neutral choice.*
-- **White Surface** (#ffffff): Card and section backgrounds. *Standard.*
-- **Light Gray** (#f8f9fa / oklch(98% 0 0)): Subtle surface variation. *Appropriate neutrals.*
-- **Text Gray** (#333333 / oklch(27% 0 0)): Body text. *Standard, good contrast.*
-- **Border Gray** (#e9ecef / oklch(93% 0 0)): Dividers and borders. *Subtle and appropriate.*
+### Accent
+- **Cool Teal-Cyan** [to be resolved during implementation: complementary to primary, distinct in hue and lightness]: Badges, status pills, links, accent rules. Must be visually distinct from primary (≥1.7 perceptual contrast) and hold readable text on filled badges (saturated OR clearly light/dark, never muddy mid-tone).
 
 ### Named Rules
-**The Gradient Overuse Problem.** The current system defaults to gradients everywhere - hero backgrounds, buttons, stats sections. This is the 2023-2025 SaaS template reflex. The next iteration should use gradients sparingly and intentionally, not as texture.
+**The One Voice Rule.** The primary accent is used on ≤60% of any given screen at maximum (committed strategy). Its saturation and confidence are the point—don't dilute by overuse.
 
-**The Color Strategy Gap.** The palette needs to move from "restrained corporate" to "committed tech-forward." A single saturated brand color should carry 30-60% of key surfaces, replacing the navy-yellow split.
+**The Pure Surface Rule.** Background is pure white (chroma 0.000). The warm-cream-bg SaaS aesthetic is explicitly rejected. Warmth lives in the brand colors and typography, not in the surface.
 
-## 3. Typography: Poppins + Inter (Competent but Generic)
+## 3. Typography
 
-**Display Font:** Poppins (sans-serif) with system fallback  
-**Body Font:** Inter (sans-serif) with system fallback
+**Font Pairing:** [Single modern sans-serif family to be chosen at implementation—versatile, multiple weights, clean and approachable without geometric coldness. Think Inter, DM Sans, or similar humanist sans.]
 
-**Character:** Poppins is a rounded geometric sans used everywhere from fintech to SaaS to food delivery. Inter is the web's default body font. Both are excellent typefaces but the pairing doesn't differentiate. The combination reads as "modern default" rather than "smart operator."
+**Character:** Approachable yet confident. A single versatile sans-serif carries the entire hierarchy through weight and scale variation. No coldness, no clinical tech-bro energy—this is friendly startup confidence with real traction.
 
-### Hierarchy (Current)
-- **Display** (700, clamp(2.5rem → 4rem), 1.1): Hero headlines. Poppins bold. *Functional but lacks distinction.*
-- **Headline** (600, 2.5rem, 1.2): Section headers. Poppins semi-bold. *Standard sizing.*
-- **Title** (600, 2rem, 1.2): Subsection headers. Poppins semi-bold. *Consistent system.*
-- **Body** (400, 1rem, 1.6): Paragraph text, Inter regular. *Good line-height for readability. Max line length not capped.*
-- **Label** (500, 0.9rem, normal): UI labels, metadata. Inter medium. *Appropriate for UI elements.*
-
-### Named Rules
-**The Default Font Problem.** Poppins + Inter is the 2023-2026 landing page standard. It's everywhere because it's safe, not because it's distinctive. "Smart operator" positioning needs either: (a) a technical/monospace accent (data-driven precision), (b) a sharper geometric sans (operational efficiency), or (c) a condensed display with punch (command attention).
-
-**The Clamp Ceiling Issue.** Display clamps to 4rem (~64px). For a hero positioning Parrave as a smart tech operator, this reads timid. Either push to 5-6rem for confidence, or stay restrained but add weight/tracking for impact.
-
-## 4. Elevation: Shadow-Heavy with Glassmorphism Accents
-
-The current system uses shadows liberally - nearly every card, button hover, and surface lift has a box-shadow. Glassmorphism (backdrop-blur + rgba background) appears in the stats section and nav.
-
-### Shadow Vocabulary (Current)
-- **Base** (`0 4px 6px rgba(0, 0, 0, 0.1)`): Default card shadow. Soft, safe. *Appropriate but nothing special.*
-- **Hover** (`0 8px 15px rgba(0, 0, 0, 0.15)`): Interactive element hover state. Lifts slightly. *Standard pattern.*
-- **Section Lift** (`0 10px 30px rgba(0, 53, 102, 0.08)`): Feature cards, testimonials. Uses primary blue tint. *Subtle color-keyed shadows are nice detail.*
-- **Hero Emphasis** (`0 20px 60px rgba(0, 53, 102, 0.15)`): Large images, partnership sections. Deep shadow with blue tint. *Dramatic but getting heavy.*
-- **Glassmorphism** (`backdrop-filter: blur(20px)` + `rgba(255,255,255,0.9)` background): Stats counter section, nav overlay. *2023-2024 effect, now saturated.*
+### Hierarchy
+- **Display** [to be chosen: likely 600-700 weight, clamp(2.5rem, 6vw, 4rem), line-height 1.1]: Hero headlines, section openers. Cap at ~4rem to avoid shouting.
+- **Headline** [to be chosen: likely 500-600 weight, clamp(1.75rem, 4vw, 2.5rem), line-height 1.2]: Page titles, major section headers.
+- **Title** [to be chosen: 500-600 weight, 1.25-1.5rem, line-height 1.3]: Subsection headers, card titles.
+- **Body** [to be chosen: 400 weight, 1rem-1.125rem, line-height 1.6]: Body copy. Max line length 65-75ch. Use `text-wrap: pretty` for long prose.
+- **Label** [to be chosen: 500 weight, 0.875rem, uppercase with 0.05-0.08em tracking]: UI labels, small caps, overlines. Use sparingly.
 
 ### Named Rules
-**The Shadow Everywhere Problem.** Every surface has a shadow, making depth feel uniform rather than intentional. A "smart operator" system should use shadows structurally (modals, dropdowns, true elevation) not decoratively (every card by default).
+**The Single Family Rule.** One sans-serif family at multiple weights. Don't pair fonts that are similar-but-not-identical. Contrast comes from weight and scale, not from mixing geometric + humanist.
 
-**The Glassmorphism Saturation.** The backdrop-blur effect is everywhere in 2024-2025 design. It's now a tell. Either commit to it as a signature (rare and powerful) or remove it (flat precision).
+## 4. Elevation
 
-## 5. Components: Card-Heavy Modern SaaS
+**Philosophy:** Flat by default with tonal layering. Surfaces gain depth through background tint shifts (pure white → slight surface tone → deeper container tones), not through heavy shadows. Shadows appear only on interactive elements in response to state (hover, focus, dropdown menus) or for true elevation (modals, popovers). 
 
-The system is built around cards - feature cards, testimonial cards, category cards, benefit cards, process step cards. Nearly every section is a grid of rounded rectangles with shadows.
+This is a modern web brand, not a skeuomorphic app. Depth is structural, not decorative.
+
+### Shadow Vocabulary
+[To be defined during implementation: likely one ambient shadow for hover states, one sharper shadow for dropdowns/popovers, and focus rings for keyboard navigation. All shadows use exponential ease-out curves for motion.]
+
+### Named Rules
+**The Flat-By-Default Rule.** Surfaces are flat at rest. Shadows appear only as a response to state (hover, elevation, focus) or for true layering needs (dropdowns, modals). Cards at rest use tonal background shifts, not drop shadows.
+
+## 5. Components
+
+[Components will be documented once implementation begins. Expect: buttons (primary/ghost variants), input fields, navigation (desktop/mobile), cards, badges/status pills, and signature hero CTAs.]
 
 ### Buttons
-- **Shape:** Rounded corners (15px for primary, 50px for pills). Modern but not distinctive.
-- **Primary:** Navy blue (#003566) background, white text, generous padding (1rem × 2rem). Hover: darker blue + deeper shadow.
-- **CTA (accent):** Yellow (#ffd60a) background, navy text, pill shape (50px radius). Hover: lighter yellow. *High contrast but visually jarring.*
-- **Secondary/Ghost:** Outlined variants. White background, navy border/text. Standard pattern.
-
-### Cards
-- **Corner Style:** 15px, 20px, 25px depending on card size. Generously rounded.
-- **Background:** White (#ffffff) on light gray (#f8f9f9) body.
-- **Shadow Strategy:** Base shadow (`0 4px 6px`) at rest, hover shadow (`0 10px 30px`) on interaction. Blue-tinted shadows for depth.
-- **Border:** Mostly shadowless; occasional 1px border in light gray (#e9ecef).
-- **Internal Padding:** 2-2.5rem, generous whitespace.
-
-**The Card Grid Problem.** The homepage is: hero → 4-card grid (value props) → stats section → 4-card grid (partnership benefits) → 4-step cards (how it works) → 6-card grid (products) → 3-card grid (testimonials) → FAQ accordion. Every section is a card grid. This is the landing page default structure, not a distinctive layout.
-
-### Chips/Badges
-- **Style:** Light gray background (#f8f9fa), dark text, 20px pill radius, small padding (0.4rem × 1rem).
-- **Use:** Product brand tags, trust indicators, feature highlights.
-- **State:** Static; no interactive variants.
-
-### Inputs (Minimal presence)
-- **Style:** Not heavily used on the marketing site. Contact form fields have standard treatments - 1px border, 12px radius, focus glow.
+- **Shape:** Gently rounded (likely 6-8px radius) for approachability without pill-style softness.
+- **Primary:** Filled with primary brand color (energetic coral-orange), white text, substantial padding (16px vertical, 32-48px horizontal). 
+- **Hover/Focus:** Slight darkening or lifting with shadow, smooth transition (~200ms ease-out).
+- **Ghost/Secondary:** Stroke variant with primary color border and text, transparent or surface-tinted background.
 
 ### Navigation
-- **Style:** Fixed glassmorphism nav (`backdrop-filter: blur(20px)`), pill-shaped links with hover backgrounds, yellow CTA button.
-- **Typography:** Inter medium, 0.9rem.
-- **Mobile:** Hamburger menu. Standard pattern.
+[To be defined: likely sticky header with logo, primary nav links, CTA button. Mobile: hamburger or slide-out menu. Active state uses primary brand color.]
 
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** maintain WCAG 2.1 AA contrast (4.5:1 body text, 3:1 large text). Current palette meets this.
-- **Do** keep line-height at 1.6+ for body text. Current 1.6 is appropriate.
-- **Do** use semantic HTML and proper ARIA labels. Current structure is solid.
-- **Do** provide reduced-motion alternatives for animations. Required for accessibility.
+- **Do** use pure white (oklch(1.000 0.000 0) / #ffffff) as the body background. Let the brand color carry the warmth and energy, not the surface.
+- **Do** deploy the primary coral-orange boldly—it should carry 30-60% of the visual surface as a committed brand strategy.
+- **Do** maintain ≥4.5:1 contrast for all body text, ≥3:1 for large text (WCAG AA compliance throughout).
+- **Do** use white text on saturated primary buttons and badges—the Helmholtz-Kohlrausch effect makes saturated mid-luminance colors appear brighter, so dark text reads as muddy.
+- **Do** support reduced motion preferences with `@media (prefers-reduced-motion: reduce)` alternatives (typically crossfades or instant transitions).
+- **Do** make the three audience pathways (location partners, brand partners, investors) clear from the homepage—three doors, one house.
+- **Do** surface traction signals concretely: "50+ machines", university logos, recognizable brand partner marks. Numbers and logos do the work; the design carries the energy.
 
 ### Don't:
-- **Don't** use the navy-yellow pairing (#003566 / #ffd60a) going forward. It's the generic B2B default and doesn't convey "smart operator" positioning. *(User feedback: feels corporate and generic.)*
-- **Don't** default to card grids for every section. The current homepage is 90% cards. Layout variety creates hierarchy. *(User feedback: visual hierarchy is weak.)*
-- **Don't** use backdrop-blur glassmorphism as default texture. It's saturated across 2024-2025 landing pages. Reserve for intentional moments or remove entirely. *(Aligns with "avoid over-designed tech startup" anti-reference from PRODUCT.md.)*
-- **Don't** use gradients everywhere. Current system has gradient backgrounds in hero, stats, how-it-works, and multiple button states. Gradients should be strategic, not default. *(Aligns with "avoid excessive gradients" anti-reference.)*
-- **Don't** pair Poppins + Inter without strategic reason. It's the 2023-2026 landing page default. "Smart operator" needs more distinction - consider monospace accents, sharper geometrics, or condensed display.
-- **Don't** use border-left accent stripes on cards. Absolute ban. None present currently, keep it that way.
-- **Don't** use numbered section markers (01 · 02 · 03) above every section as scaffolding. Not present currently; don't introduce.
-- **Don't** drift toward cream/sand/parchment body backgrounds (OKLCH L 0.88-0.95, chroma < 0.06, hue 50-80). Current #f9f9f9 is clean off-white; maintain that register. *(Per PRODUCT.md anti-reference.)*
-
----
-
-## Next Steps to Evolve the Design
-
-This DESIGN.md documents the **current baseline** that needs improvement based on user feedback. The system is competent and accessible but generic. To achieve "The Smart Operator" vision:
-
-1. **Run `/impeccable colorize`** to develop a new palette that moves away from corporate blue-yellow toward tech-forward colors (consider: deep teals, precision grays with tech accents, data viz inspired palette).
-
-2. **Run `/impeccable typeset`** to explore typography that signals operational precision - sharper sans-serifs, monospace accents for data/metrics, or condensed display for command.
-
-3. **Run `/impeccable layout`** to break the card-grid monotony - introduce section rhythm, varied layouts, data-driven elements that feel like dashboards not brochures.
-
-4. **Run `/impeccable bolder`** if the next iteration still feels too safe. "Smart operator" should project confidence and capability, not corporate caution.
+- **Don't** use warm-cream or sand-tinted backgrounds (the saturated 2023 SaaS aesthetic). Explicitly rejected per PRODUCT.md anti-references.
+- **Don't** adopt a manufacturing or industrial corporate aesthetic. Parrave is an operator and a startup, not a hardware vendor.
+- **Don't** fall into cold, clinical, metrics-heavy dashboard design. This is a brand site with human energy, not a pure-data interface.
+- **Don't** use glassmorphism, gradient text, or side-stripe colored borders as decorative defaults. These are AI slop markers.
+- **Don't** put tiny uppercase tracked eyebrows ("01 · ABOUT", "02 · PROCESS") above every section—this is the 2023 AI scaffold reflex. Use numbered markers only when the section IS a real sequence where order matters.
+- **Don't** use identical card grids (same icon + heading + text repeated endlessly). Vary layout, rhythm, and hierarchy.
+- **Don't** pair two similar sans-serif families (geometric + humanist). Use one family at multiple weights, or pair on a real contrast axis (serif + sans).
+- **Don't** animate CSS layout properties unless truly needed. Prefer transform/opacity for performance and smoothness.
