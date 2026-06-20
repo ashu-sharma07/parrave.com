@@ -119,24 +119,91 @@
   });
 
   // ---------- Form submit ----------
+  // The form supports two delivery modes:
+  //
+  // 1) Backend mode (recommended): set the form's `action` attribute in
+  //    index.html to your Formspree / Web3Forms / Resend endpoint. The
+  //    form will POST JSON via fetch and show a success message.
+  //
+  // 2) Mailto fallback: if no `action` is set (or it equals "#"), the
+  //    handler opens the user's email client pre-filled to info@parrave.com.
+  //
+  // To switch to backend mode, change the <form> tag in index.html to:
+  //   <form id="contactForm" action="https://formspree.io/f/YOUR_ID" method="POST" novalidate>
+  // and that's it — no JS changes needed.
+
+  const CONTACT_EMAIL = 'info@parrave.com';
   const form = document.getElementById('contactForm');
   const formNote = document.getElementById('formNote');
+
+  function showSuccess(msg) {
+    if (!formNote) return;
+    formNote.hidden = false;
+    formNote.textContent = msg || 'Thanks — we’ll be in touch within 48 hours.';
+    formNote.classList.remove('is-error');
+  }
+  function showError(msg) {
+    if (!formNote) return;
+    formNote.hidden = false;
+    formNote.textContent = msg;
+    formNote.classList.add('is-error');
+  }
+  function lockForm(locked) {
+    if (!form) return;
+    form.querySelectorAll('input, textarea, button').forEach((el) => (el.disabled = locked));
+  }
+
+  function buildMailto(data) {
+    const subject = `[Parrave website] ${data.role || 'general'} inquiry — ${data.name || ''}`.trim();
+    const lines = [
+      `Role: ${data.role || ''}`,
+      `Name: ${data.name || ''}`,
+      `Email: ${data.email || ''}`,
+      `Company / Institution: ${data.org || ''}`,
+      '',
+      'Message:',
+      data.message || '',
+    ];
+    const body = lines.join('\n');
+    return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
 
-      // Demo behavior — wire up to your backend / Formspree / Notion etc.
-      const data = Object.fromEntries(new FormData(form).entries());
-      console.log('[Parrave] Contact form submitted:', data);
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      const action = (form.getAttribute('action') || '').trim();
+      const hasBackend = action && action !== '#' && /^https?:\/\//.test(action);
 
-      form.querySelectorAll('input, textarea, button').forEach((el) => (el.disabled = true));
-      if (formNote) {
-        formNote.hidden = false;
-        formNote.textContent = 'Thanks — we’ll be in touch within 48 hours.';
+      // ----- Mode 2: mailto fallback -----
+      if (!hasBackend) {
+        window.location.href = buildMailto(data);
+        showSuccess('Opening your email app — please send the pre-filled message to complete your inquiry.');
+        return;
+      }
+
+      // ----- Mode 1: real backend POST -----
+      lockForm(true);
+      showSuccess('Sending…');
+      try {
+        const res = await fetch(action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error('Network response was not ok');
+        showSuccess('Thanks — we’ll be in touch within 48 hours.');
+      } catch (err) {
+        console.warn('[Parrave] Form submit failed, falling back to mailto:', err);
+        lockForm(false);
+        window.location.href = buildMailto(data);
+        showError('Couldn’t reach our server. We’ve opened your email app as a fallback.');
       }
     });
   }

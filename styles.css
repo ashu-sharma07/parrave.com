@@ -287,8 +287,94 @@ ul, ol { list-style: none; }
 }
 
 .hero__inner {
-  max-width: 920px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-areas:
+    "content visual"
+    "metrics metrics";
+  gap: 56px 48px;
+  align-items: center;
   text-align: left;
+}
+.hero__content { grid-area: content; max-width: 620px; }
+.hero__visual {
+  grid-area: visual;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 480px;
+}
+
+.machine {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
+  animation: machine-float 6s ease-in-out infinite;
+}
+@keyframes machine-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Animated screen content */
+.m-bar { transform-origin: left center; animation: barPulse 3.2s ease-in-out infinite; }
+.m-bar-2 { animation-delay: .2s; }
+.m-bar-3 { animation-delay: .4s; }
+@keyframes barPulse {
+  0%, 100% { opacity: .55; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.04); }
+}
+.m-live { animation: livePulse 1.6s ease-in-out infinite; }
+@keyframes livePulse {
+  0%, 100% { opacity: .4; r: 4; }
+  50% { opacity: 1; r: 5; }
+}
+
+/* Floating badges around the machine */
+.machine-badge {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(11, 13, 12, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(196, 245, 66, 0.28);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text-inv);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.machine-badge--iot {
+  top: 14%;
+  left: -8%;
+  animation: badge-float-1 7s ease-in-out infinite;
+}
+.machine-badge--upi {
+  bottom: 22%;
+  right: -6%;
+  animation: badge-float-2 8s ease-in-out infinite;
+}
+.machine-badge__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(196, 245, 66, 0.22);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes badge-float-1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes badge-float-2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 
 .pill {
@@ -336,10 +422,10 @@ ul, ol { list-style: none; }
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 80px;
 }
 
 .hero__metrics {
+  grid-area: metrics;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
@@ -386,7 +472,7 @@ ul, ol { list-style: none; }
   display: flex;
   gap: 28px;
   white-space: nowrap;
-  animation: scroll 32s linear infinite;
+  animation: scroll var(--marquee-duration, 32s) linear infinite;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 18px;
@@ -916,6 +1002,7 @@ ul, ol { list-style: none; }
   text-align: center;
   margin-top: 4px;
 }
+.form-note.is-error { color: var(--coral); }
 
 /* ============ FOOTER ============ */
 .footer {
@@ -983,7 +1070,22 @@ ul, ol { list-style: none; }
 @media (max-width: 980px) {
   .section { padding: 80px 0; }
   .hero { padding: 130px 0 80px; }
+  .hero__inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "visual"
+      "metrics";
+    gap: 48px;
+  }
+  .hero__visual { min-height: 360px; order: 2; }
+  .machine { max-width: 260px; }
+  .machine-badge--iot { left: 0; }
+  .machine-badge--upi { right: 0; }
   .hero__metrics { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+
+  /* Marquee feels slow on smaller viewports — speed it up */
+  .trust__track { --marquee-duration: 22s; font-size: 16px; gap: 22px; }
 
   .cards-3,
   .audience-grid,
@@ -1017,6 +1119,12 @@ ul, ol { list-style: none; }
   .hero__ctas { flex-direction: column; align-items: stretch; }
   .hero__ctas .btn { width: 100%; }
   .hero__metrics { padding-top: 32px; }
+  .hero__visual { min-height: 320px; }
+  .machine { max-width: 220px; }
+  .machine-badge { font-size: 11px; padding: 8px 12px; }
+  .machine-badge--upi { display: none; } /* keep one badge to avoid clutter */
+
+  .trust__track { --marquee-duration: 16s; font-size: 15px; gap: 18px; }
 
   .stats__grid { grid-template-columns: 1fr; gap: 20px; }
   .steps { grid-template-columns: 1fr; }
