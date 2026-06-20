@@ -1,837 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parrave Ventures - Vending Solutions Across India</title>
-    <meta
-      name="description"
-      content="Parrave Ventures Private Limited - Leading vending machine operator in India. We specialize in installing and operating snack and beverage vending machines across universities, metros, societies, and hotels."
-    />
-    <meta
-      name="keywords"
-      content="vending machines, India, snacks, beverages, universities, metro stations, hotels"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Parrave Ventures operates 50+ smart IoT vending machines across India's premium universities. Partner with us for locations, brand advertising, and shelf space." />
+  <title>Parrave Ventures — Smart Vending, Reimagined</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- Modern Navigation -->
-    <nav class="modern-navbar">
-      <div class="container">
-        <div class="nav-container">
-          <div class="nav-brand">
-            <a href="index.html">
-              <div class="brand-icon">
-                <i class="fas fa-cube"></i>
-              </div>
-              <div class="brand-text">
-                <span class="brand-name">Parrave</span>
-                <span class="brand-tagline">Ventures</span>
-              </div>
-            </a>
-          </div>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo" aria-label="Parrave Ventures home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">parrave</span>
+      </a>
 
-          <div class="nav-menu" id="nav-menu">
-            <div class="nav-pills">
-              <a href="index.html" class="nav-pill active">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-              </a>
-              <a href="about.html" class="nav-pill">
-                <i class="fas fa-users"></i>
-                <span>About</span>
-              </a>
-              <a href="services.html" class="nav-pill">
-                <i class="fas fa-cogs"></i>
-                <span>Services</span>
-              </a>
-              <a href="projects.html" class="nav-pill">
-                <i class="fas fa-briefcase"></i>
-                <span>Projects</span>
-              </a>
-              <a href="contact.html" class="nav-pill">
-                <i class="fas fa-envelope"></i>
-                <span>Contact</span>
-              </a>
-            </div>
-            <div class="nav-cta">
-              <a href="contact.html" class="cta-button">
-                <span>Get Demo</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#what">What we do</a>
+        <a href="#partners">Partners</a>
+        <a href="#advertising">Advertise</a>
+        <a href="#investors">Investors</a>
+      </nav>
 
-          <div class="mobile-menu-toggle" id="mobile-toggle">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Modern Hero Section -->
-    <section class="modern-hero">
-      <div class="hero-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
+      <div class="nav__cta">
+        <a href="#contact" class="btn btn--primary btn--sm">Partner with us →</a>
       </div>
 
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <div class="hero-badge">
-              <i class="fas fa-star"></i>
-              <span>Leading Vending Solutions Provider</span>
-            </div>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-            <h1 class="hero-title">
-              India's Smart Vending
-              <span class="gradient-text">Revolution</span>
-            </h1>
+    <div class="nav__mobile" id="navMobile" aria-hidden="true">
+      <a href="#what">What we do</a>
+      <a href="#partners">Partners</a>
+      <a href="#advertising">Advertise</a>
+      <a href="#investors">Investors</a>
+      <a href="#contact" class="btn btn--primary">Partner with us →</a>
+    </div>
+  </header>
 
-            <p class="hero-description">
-              Transform your location with intelligent vending machines. 24/7 access to snacks, beverages, and essentials with cashless payments, zero investment, and guaranteed revenue sharing.
-            </p>
+  <main id="top">
 
-            <div class="hero-stats">
-              <div class="stat">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Active Machines</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Locations</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">99%</div>
-                <div class="stat-label">Uptime</div>
-              </div>
-            </div>
-
-            <div class="hero-actions">
-              <a href="contact.html" class="btn-primary-modern">
-                <span>Get Free Demo</span>
-                <div class="btn-icon">
-                  <i class="fas fa-rocket"></i>
-                </div>
-              </a>
-              <a href="services.html" class="btn-secondary-modern">
-                <i class="fas fa-play-circle"></i>
-                <span>Watch Demo</span>
-              </a>
-            </div>
-
-            <div class="trust-indicators">
-              <span class="trust-text">Trusted by</span>
-              <div class="trust-logos">
-                <span class="trust-item">Chitkara University</span>
-                <span class="trust-item">Delhi Metro</span>
-                <span class="trust-item">Radisson Hotels</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-visual">
-            <div class="visual-container">
-              <div class="main-card">
-                <div class="card-header">
-                  <div class="card-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <div class="card-title">Smart Vending</div>
-                </div>
-                <div class="card-content">
-                  <img
-                    src="./assets/images/sample.jpg"
-                    alt="Modern Vending Machine"
-                    class="hero-image"
-                  />
-                  <div class="card-overlay">
-                    <div class="feature-highlight">
-                      <i class="fas fa-check-circle"></i>
-                      <span>24/7 Operations</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="floating-cards">
-                <div class="floating-card card-1">
-                  <i class="fas fa-chart-line"></i>
-                  <span>Real-time Analytics</span>
-                </div>
-                <div class="floating-card card-2">
-                  <i class="fas fa-mobile-alt"></i>
-                  <span>Cashless Payments</span>
-                </div>
-                <div class="floating-card card-3">
-                  <i class="fas fa-leaf"></i>
-                  <span>Eco-Friendly</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="grid-overlay"></div>
       </div>
 
-      <div class="scroll-indicator-modern">
-        <div class="scroll-arrow">
-          <i class="fas fa-chevron-down"></i>
+      <div class="container hero__inner">
+        <div class="pill reveal">
+          <span class="pill__dot"></span>
+          50+ smart machines · 6 premium campuses
         </div>
-      </div>
-    </section>
 
-    <!-- Value Propositions -->
-    <section class="value-props">
-      <div class="container">
-        <div class="section-header">
-          <h2>Why Choose Parrave?</h2>
-          <p>Four pillars that make us India's most trusted vending partner</p>
+        <h1 class="hero__title reveal">
+          Smart vending,<br />
+          <span class="grad-text">reimagined for India's</span><br />
+          next generation.
+        </h1>
+
+        <p class="hero__sub reveal">
+          Parrave Ventures operates a network of IoT-enabled vending machines inside India's
+          premium universities — putting your brand, your products, and your message in front
+          of a captive young audience, 24/7.
+        </p>
+
+        <div class="hero__ctas reveal">
+          <a href="#contact" class="btn btn--primary btn--lg">Partner with us</a>
+          <a href="#what" class="btn btn--ghost btn--lg">See how it works ↓</a>
         </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-clock"></i>
-            </div>
-            <h3>24/7 Convenience</h3>
-            <p>
-              Round-the-clock access to snacks, beverages, and essentials. Your customers get what they need, whenever they need it.
-            </p>
+
+        <div class="hero__metrics reveal">
+          <div class="metric">
+            <div class="metric__num">50<span>+</span></div>
+            <div class="metric__label">Machines deployed</div>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-credit-card"></i>
-            </div>
-            <h3>Cashless Payments</h3>
-            <p>
-              Accept all payment methods - UPI, cards, wallets, and digital payments. Safe, secure, and contactless transactions.
-            </p>
+          <div class="metric">
+            <div class="metric__num">6</div>
+            <div class="metric__label">Premium campuses</div>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-th-large"></i>
-            </div>
-            <h3>Wide Selection</h3>
-            <p>
-              From healthy snacks to beverages, chocolates to essentials. 40+ products curated for your audience.
-            </p>
+          <div class="metric">
+            <div class="metric__num">100K<span>+</span></div>
+            <div class="metric__label">Daily impressions</div>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-leaf"></i>
-            </div>
-            <h3>Always Fresh</h3>
-            <p>
-              Regular restocking and quality checks ensure your customers always get fresh, premium products.
-            </p>
+          <div class="metric">
+            <div class="metric__num">18-24</div>
+            <div class="metric__label">Core demographic</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Statistics Counter -->
-    <section class="stats-counter">
+    <!-- ============ TRUSTED BY (UNIVERSITIES) ============ -->
+    <section class="trust">
       <div class="container">
-        <div class="stats-grid">
-          <div class="stat-box">
-            <div class="stat-icon">
-              <i class="fas fa-robot"></i>
-            </div>
-            <div class="stat-number" data-target="100">100+</div>
-            <div class="stat-label">Smart Machines</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-icon">
-              <i class="fas fa-city"></i>
-            </div>
-            <div class="stat-number" data-target="10">10+</div>
-            <div class="stat-label">Cities Covered</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-icon">
-              <i class="fas fa-shopping-bag"></i>
-            </div>
-            <div class="stat-number" data-target="50000">50,000+</div>
-            <div class="stat-label">Monthly Transactions</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-icon">
-              <i class="fas fa-smile"></i>
-            </div>
-            <div class="stat-number" data-target="99">99%</div>
-            <div class="stat-label">Customer Satisfaction</div>
+        <p class="trust__label">Live on campus at</p>
+        <div class="trust__marquee" aria-label="University partners">
+          <div class="trust__track">
+            <span>Chitkara University, Rajpura</span>
+            <span class="dot">•</span>
+            <span>Chandigarh University, Mohali</span>
+            <span class="dot">•</span>
+            <span>Chandigarh University, Lucknow</span>
+            <span class="dot">•</span>
+            <span>Rayat Bahra University, Mohali</span>
+            <span class="dot">•</span>
+            <span>Geeta University, Panipat</span>
+            <span class="dot">•</span>
+            <!-- duplicate for seamless loop -->
+            <span>Chitkara University, Rajpura</span>
+            <span class="dot">•</span>
+            <span>Chandigarh University, Mohali</span>
+            <span class="dot">•</span>
+            <span>Chandigarh University, Lucknow</span>
+            <span class="dot">•</span>
+            <span>Rayat Bahra University, Mohali</span>
+            <span class="dot">•</span>
+            <span>Geeta University, Panipat</span>
+            <span class="dot">•</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Partnership Benefits -->
-    <section class="partnership-benefits">
+    <!-- ============ WHAT WE DO ============ -->
+    <section class="section" id="what">
       <div class="container">
-        <div class="section-header">
-          <h2>Partner with Zero Investment</h2>
-          <p>Earn passive income with our revenue-sharing model</p>
-        </div>
-        <div class="benefits-content">
-          <div class="benefits-image">
-            <img src="./assets/images/sample.jpg" alt="Partnership Benefits" loading="lazy">
-            <div class="benefits-badge">
-              <i class="fas fa-handshake"></i>
-              <span>Trusted by 50+ Locations</span>
-            </div>
-          </div>
-          <div class="benefits-list">
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-dollar-sign"></i>
-              </div>
-              <div class="benefit-text">
-                <h3>No Investment Required</h3>
-                <p>We handle all costs - machine, installation, products, and maintenance. You just provide the space.</p>
-              </div>
-            </div>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div class="benefit-text">
-                <h3>Transparent Revenue Sharing</h3>
-                <p>Earn consistent monthly income with our transparent revenue-sharing model and detailed reports.</p>
-              </div>
-            </div>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-tools"></i>
-              </div>
-              <div class="benefit-text">
-                <h3>Complete Management</h3>
-                <p>We handle everything - restocking, maintenance, customer support, and technical issues.</p>
-              </div>
-            </div>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-rocket"></i>
-              </div>
-              <div class="benefit-text">
-                <h3>Quick Setup</h3>
-                <p>Get started in less than 7 days from consultation to go-live. Hassle-free process.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works">
-      <div class="container">
-        <div class="section-header">
-          <h2>How It Works</h2>
-          <p>Four simple steps to transform your location</p>
-        </div>
-        <div class="process-timeline">
-          <div class="process-step">
-            <div class="step-icon">
-              <i class="fas fa-phone-alt"></i>
-            </div>
-            <h3>Free Consultation</h3>
-            <p>Contact us for a free site assessment. We'll evaluate your location and recommend the best vending solution.</p>
-          </div>
-          <div class="process-connector"></div>
-          <div class="process-step">
-            <div class="step-icon">
-              <i class="fas fa-file-signature"></i>
-            </div>
-            <h3>Agreement & Planning</h3>
-            <p>Sign the partnership agreement and we'll customize the product selection and branding for your audience.</p>
-          </div>
-          <div class="process-connector"></div>
-          <div class="process-step">
-            <div class="step-icon">
-              <i class="fas fa-wrench"></i>
-            </div>
-            <h3>Installation</h3>
-            <p>Professional installation within 3-5 days. We handle everything - setup, testing, and staff training.</p>
-          </div>
-          <div class="process-connector"></div>
-          <div class="process-step">
-            <div class="step-icon">
-              <i class="fas fa-chart-pie"></i>
-            </div>
-            <h3>Earn & Grow</h3>
-            <p>Start earning from day one. We manage operations, you receive monthly revenue share and detailed reports.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Preview -->
-    <section class="services-preview">
-      <div class="container">
-        <div class="services-content">
-          <div class="services-text">
-            <h2>Our Services</h2>
-            <p>
-              We provide comprehensive vending machine solutions tailored to
-              your specific needs and location requirements.
-            </p>
-            <ul class="services-list">
-              <li><i class="fas fa-check"></i> Vending Machine Installation</li>
-              <li><i class="fas fa-check"></i> Operation & Maintenance</li>
-              <li><i class="fas fa-check"></i> Custom Branding Solutions</li>
-              <li><i class="fas fa-check"></i> Product Sourcing & Stocking</li>
-            </ul>
-            <a href="services.html" class="btn btn-primary"
-              >View All Services</a
-            >
-          </div>
-          <div class="services-image">
-            <img
-              src="./assets/images/sample.jpg"
-              alt="Vending Machine Services"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Smart Technology -->
-    <section class="smart-technology">
-      <div class="container">
-        <div class="tech-content">
-          <div class="tech-text">
-            <div class="section-badge">
-              <i class="fas fa-microchip"></i>
-              <span>Smart Technology</span>
-            </div>
-            <h2>Intelligent Vending Machines</h2>
-            <p>Our IoT-enabled machines are equipped with cutting-edge technology to ensure seamless operations and superior customer experience.</p>
-            <div class="tech-features">
-              <div class="tech-feature">
-                <i class="fas fa-mobile-alt"></i>
-                <div>
-                  <h4>Mobile Integration</h4>
-                  <p>Scan QR codes for instant payments and digital receipts</p>
-                </div>
-              </div>
-              <div class="tech-feature">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                  <h4>Real-Time Analytics</h4>
-                  <p>Live inventory tracking and sales monitoring</p>
-                </div>
-              </div>
-              <div class="tech-feature">
-                <i class="fas fa-bell"></i>
-                <div>
-                  <h4>Smart Alerts</h4>
-                  <p>Automated notifications for restocking and maintenance</p>
-                </div>
-              </div>
-              <div class="tech-feature">
-                <i class="fas fa-lock"></i>
-                <div>
-                  <h4>Secure Payments</h4>
-                  <p>Bank-grade encryption for all transactions</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tech-visual">
-            <img src="./assets/images/sample.jpg" alt="Smart Vending Technology" loading="lazy">
-            <div class="tech-badges">
-              <div class="tech-badge">
-                <i class="fas fa-wifi"></i>
-                <span>IoT Enabled</span>
-              </div>
-              <div class="tech-badge">
-                <i class="fas fa-cloud"></i>
-                <span>Cloud Connected</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product Categories -->
-    <section class="product-categories">
-      <div class="container">
-        <div class="section-header">
-          <h2>What's Inside Our Machines</h2>
-          <p>Curated selection of 40+ premium products</p>
-        </div>
-        <div class="categories-grid">
-          <div class="category-card">
-            <div class="category-icon">
-              <i class="fas fa-cookie-bite"></i>
-            </div>
-            <h3>Snacks</h3>
-            <p>Chips, biscuits, namkeen, chocolates, and more</p>
-            <div class="category-brands">
-              <span>Lays</span>
-              <span>Kurkure</span>
-              <span>Haldiram's</span>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-icon">
-              <i class="fas fa-coffee"></i>
-            </div>
-            <h3>Beverages</h3>
-            <p>Cold drinks, juices, energy drinks, water</p>
-            <div class="category-brands">
-              <span>Coca-Cola</span>
-              <span>Pepsi</span>
-              <span>Red Bull</span>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-icon">
-              <i class="fas fa-heart"></i>
-            </div>
-            <h3>Healthy Options</h3>
-            <p>Protein bars, dry fruits, health drinks</p>
-            <div class="category-brands">
-              <span>Yoga Bar</span>
-              <span>RiteBite</span>
-              <span>Muesli</span>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-icon">
-              <i class="fas fa-candy-cane"></i>
-            </div>
-            <h3>Confectionery</h3>
-            <p>Candies, mints, chewing gums</p>
-            <div class="category-brands">
-              <span>Cadbury</span>
-              <span>Nestle</span>
-              <span>Mentos</span>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-icon">
-              <i class="fas fa-utensils"></i>
-            </div>
-            <h3>Ready-to-Eat</h3>
-            <p>Instant noodles, pasta, soups</p>
-            <div class="category-brands">
-              <span>Maggi</span>
-              <span>Top Ramen</span>
-              <span>Yippee</span>
-            </div>
-          </div>
-          <div class="category-card">
-            <div class="category-icon">
-              <i class="fas fa-box"></i>
-            </div>
-            <h3>Essentials</h3>
-            <p>Masks, sanitizers, tissues, stationery</p>
-            <div class="category-brands">
-              <span>Dettol</span>
-              <span>Lifebuoy</span>
-              <span>More</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-      <div class="container">
-        <div class="section-header">
-          <h2>What Our Partners Say</h2>
-          <p>Trusted by leading institutions across India</p>
-        </div>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "Parrave's vending machines have been a game-changer for our campus. Students love the 24/7 accessibility and cashless payment options. The maintenance team is always responsive."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="author-info">
-                <h4>Dr. Rajesh Kumar</h4>
-                <p>Admin Head, Chitkara University</p>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "The revenue-sharing model is transparent and profitable. We didn't have to invest anything, and the machines are always well-stocked. Excellent partnership!"
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="author-info">
-                <h4>Priya Sharma</h4>
-                <p>Operations Manager, Radisson Hotel</p>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "Our employees appreciate having quick access to snacks and beverages without leaving the office. The smart technology and product variety are impressive."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="author-info">
-                <h4>Amit Verma</h4>
-                <p>HR Director, TCS Noida</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Frequently Asked Questions</h2>
-          <p>Everything you need to know about partnering with Parrave</p>
-        </div>
-        <div class="faq-content">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
-              <h3>Do I need to invest any money?</h3>
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-answer-1" role="region">
-              <p>No, absolutely not! We provide the machines, products, installation, and maintenance at zero cost to you. You only need to provide the space. It's a completely risk-free partnership.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>How does the revenue sharing work?</h3>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              <p>We follow a transparent revenue-sharing model where you receive a fixed percentage of monthly sales. Payments are made on time with detailed reports showing all transactions.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Who handles maintenance and restocking?</h3>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              <p>Our team handles everything - regular restocking, preventive maintenance, technical support, and any customer issues. You don't have to worry about operations at all.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>What are the space requirements?</h3>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              <p>A standard vending machine requires approximately 6-8 square feet of floor space with nearby electrical outlet. We can accommodate different machine sizes based on your available space.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>How long does installation take?</h3>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              <p>Once we finalize the agreement, installation typically takes 3-5 business days. This includes machine setup, product loading, payment system configuration, and testing.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Can we customize the product selection?</h3>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              <p>Yes! We customize the product mix based on your location type and customer preferences. We regularly review sales data and adjust inventory to maximize satisfaction and sales.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Locations Preview -->
-    <section class="locations-preview">
-      <div class="container">
-        <div class="section-header">
-          <h2>Our Locations</h2>
-          <p>
-            Serving customers across prestigious institutions and prime
-            locations
+        <div class="section__head reveal">
+          <span class="eyebrow">What we do</span>
+          <h2 class="section__title">
+            We're not a vending manufacturer.<br />
+            <span class="grad-text">We're an operator — and a media network.</span>
+          </h2>
+          <p class="section__lead">
+            Parrave deploys, owns, and operates smart IoT vending machines inside high-footfall
+            premium institutions. Every machine is connected, cashless, and built to be both a
+            retail point and an advertising surface.
           </p>
         </div>
-        <div class="locations-grid">
-          <div class="location-card">
-            <img
-              src="./assets/images/sample.jpg"
-              alt="University Campus"
-              loading="lazy"
-            />
-            <div class="location-info">
-              <h3>Chitkara University</h3>
-              <p>Premium vending solutions for students and faculty</p>
+
+        <div class="cards-3 reveal">
+          <article class="card card--glow">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 9h14M5 16h14"/><circle cx="9" cy="19.5" r=".6" fill="currentColor"/></svg>
             </div>
-          </div>
-          <div class="location-card">
-            <img
-              src="./assets/images/sample.jpg"
-              alt="Metro Station"
-              loading="lazy"
-            />
-            <div class="location-info">
-              <h3>Delhi Metro Station</h3>
-              <p>Quick refreshments for commuters on the go</p>
+            <h3>IoT-first hardware</h3>
+            <p>Cloud-connected machines with real-time inventory, cashless payments, and remote diagnostics. Zero downtime, zero guesswork.</p>
+          </article>
+
+          <article class="card card--glow">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-2 13H5L3 7z"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg>
             </div>
-          </div>
-          <div class="location-card">
-            <img
-              src="./assets/images/sample.jpg"
-              alt="Hotel Lobby"
-              loading="lazy"
-            />
-            <div class="location-info">
-              <h3>Radisson Hotel</h3>
-              <p>24/7 convenience for hotel guests and visitors</p>
+            <h3>Curated retail</h3>
+            <p>Snacks, beverages, and lifestyle products from leading FMCG and D2C brands — chosen for the young, premium audience we serve.</p>
+          </article>
+
+          <article class="card card--glow">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg>
             </div>
-          </div>
-        </div>
-        <div class="locations-cta">
-          <a href="projects.html" class="btn btn-secondary"
-            >View All Projects</a
-          >
+            <h3>On-machine media</h3>
+            <p>10", 22" and 52" displays turn every machine into an ad surface. Hyper-targeted campaigns where Gen Z actually pays attention.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- ============ STATS / TRACTION ============ -->
+    <section class="stats">
       <div class="container">
-        <div class="cta-content">
-          <h2>Ready to Partner with Us?</h2>
-          <p>
-            Get in touch today for a free consultation and demo of our vending
-            solutions.
+        <div class="stats__grid">
+          <div class="stat reveal">
+            <div class="stat__num">50<span>+</span></div>
+            <div class="stat__label">Smart machines live</div>
+            <div class="stat__hint">Growing every month</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num">6</div>
+            <div class="stat__label">Premium campuses</div>
+            <div class="stat__hint">Tier-1 universities across North India</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num">18–24</div>
+            <div class="stat__label">Core age group</div>
+            <div class="stat__hint">High-intent, high-spend young consumers</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num">24/7</div>
+            <div class="stat__label">Always-on retail</div>
+            <div class="stat__hint">Cashless · contactless · always stocked</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PARTNER WITH US (3 audiences) ============ -->
+    <section class="section section--dark" id="partners">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Partner with Parrave</span>
+          <h2 class="section__title">Three ways to grow with us.</h2>
+          <p class="section__lead">
+            Whether you own a high-footfall location, run a brand that wants to reach young
+            India, or you're an investor — there's a clear path in.
           </p>
-          <div class="cta-buttons">
-            <a href="contact.html" class="btn btn-primary">Get Free Demo</a>
-            <a href="tel:+917056492889" class="btn btn-outline">
-              <i class="fas fa-phone"></i> Call Now
-            </a>
-          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Parrave Ventures</h3>
-            <p>
-              Leading vending machine operator providing innovative solutions
-              across India.
+        <div class="audience-grid reveal">
+
+          <!-- Location partners -->
+          <article class="audience">
+            <div class="audience__top">
+              <span class="audience__tag">For Location Partners</span>
+              <h3>Host a Parrave machine.<br />Earn passively.</h3>
+            </div>
+            <p class="audience__desc">
+              Universities, corporate campuses, hostels, gyms, hospitals, co-living spaces —
+              if you've got footfall, we've got the machine. Zero capex, zero ops, monthly revenue share.
             </p>
-            <div class="social-links">
-              <a href="#" aria-label="LinkedIn"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a href="#" aria-label="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" aria-label="Facebook"
-                ><i class="fab fa-facebook"></i
-              ></a>
-            </div>
-          </div>
-          <div class="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="projects.html">Projects</a></li>
-              <li><a href="contact.html">Contact</a></li>
+            <ul class="audience__list">
+              <li>We install, stock, and maintain — at our cost</li>
+              <li>Cashless &amp; UPI-first, designed for student users</li>
+              <li>Curated product mix tailored to your audience</li>
+              <li>Transparent monthly payouts</li>
             </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="services.html">Machine Installation</a></li>
-              <li><a href="services.html">Operation & Maintenance</a></li>
-              <li><a href="services.html">Custom Branding</a></li>
-              <li><a href="services.html">Product Sourcing</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Contact Info</h4>
-            <div class="contact-info">
-              <p>
-                <i class="fas fa-map-marker-alt"></i> Zirakpur, Punjab, India
-              </p>
-              <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-              <p><i class="fas fa-envelope"></i> info@parraveventures.com</p>
+            <a href="#contact" data-prefill="location" class="btn btn--primary">Become a host →</a>
+          </article>
+
+          <!-- Brand partners -->
+          <article class="audience audience--accent">
+            <div class="audience__top">
+              <span class="audience__tag">For Brand Partners</span>
+              <h3>Get on shelf.<br />Get on screen.</h3>
             </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>
-            &copy; 2025 Parrave Ventures Private Limited. All rights reserved.
-          </p>
+            <p class="audience__desc">
+              Reach 100K+ monthly young consumers in India's most premium institutions. List
+              your product on our coils, run ad campaigns on our 10", 22" and 52" displays, or both.
+            </p>
+            <ul class="audience__list">
+              <li><strong>Coil rentals</strong> — premium shelf space across the network</li>
+              <li><strong>Display ads</strong> — 10" / 22" / 52" screens, full-motion video</li>
+              <li>Campaign analytics &amp; sell-through reporting</li>
+              <li>Sampling &amp; product-launch programs</li>
+            </ul>
+            <a href="#contact" data-prefill="brand" class="btn btn--primary">Run a campaign →</a>
+          </article>
+
+          <!-- Investors -->
+          <article class="audience">
+            <div class="audience__top">
+              <span class="audience__tag">For Investors</span>
+              <h3>Back the operator<br />of new-age retail.</h3>
+            </div>
+            <p class="audience__desc">
+              We're building India's largest smart vending &amp; on-machine media network across
+              premium youth locations. Strong unit economics, hardware moat, and a media layer
+              on top.
+            </p>
+            <ul class="audience__list">
+              <li>Operator model — recurring, location-anchored revenue</li>
+              <li>Two revenue lines: retail GMV + advertising</li>
+              <li>Premium campus footprint, ready to scale</li>
+              <li>Detailed deck &amp; data room on request</li>
+            </ul>
+            <a href="#contact" data-prefill="investor" class="btn btn--primary">Talk to us →</a>
+          </article>
+
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="js/script.js"></script>
-  </body>
+    <!-- ============ ADVERTISING ============ -->
+    <section class="section" id="advertising">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Advertising on Parrave</span>
+          <h2 class="section__title">
+            A media network<br />
+            <span class="grad-text">where Gen Z actually stops to look.</span>
+          </h2>
+          <p class="section__lead">
+            People stand in front of a vending machine for 30–90 seconds. That's not a banner ad
+            being scrolled past — that's full attention. We sell that attention.
+          </p>
+        </div>
+
+        <div class="ad-grid reveal">
+          <div class="ad-card ad-card--lg">
+            <div class="ad-card__screen ad-card__screen--52">
+              <span>52"</span>
+              <div class="ad-card__pulse"></div>
+            </div>
+            <div class="ad-card__body">
+              <h4>52" hero display</h4>
+              <p>Full-motion video, brand films, takeover campaigns. Our largest canvas — impossible to miss in a crowded campus corridor.</p>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <div class="ad-card__screen ad-card__screen--22">
+              <span>22"</span>
+            </div>
+            <div class="ad-card__body">
+              <h4>22" engagement display</h4>
+              <p>Mid-funnel content, product spotlights, and interactive offers right at eye level during purchase.</p>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <div class="ad-card__screen ad-card__screen--10">
+              <span>10"</span>
+            </div>
+            <div class="ad-card__body">
+              <h4>10" point-of-sale display</h4>
+              <p>Last-second nudges and combo offers — captures intent at the exact moment of purchase.</p>
+            </div>
+          </div>
+
+          <div class="ad-card ad-card--coil">
+            <div class="ad-card__screen ad-card__screen--coil">
+              <div class="coil"></div>
+              <div class="coil"></div>
+              <div class="coil"></div>
+            </div>
+            <div class="ad-card__body">
+              <h4>Coil rentals — shelf space</h4>
+              <p>Lock in dedicated coils across the network. Guaranteed visibility, guaranteed sell-through, monthly reporting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section--how">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2 class="section__title">From handshake to live machine — fast.</h2>
+        </div>
+
+        <ol class="steps reveal">
+          <li class="step">
+            <div class="step__num">01</div>
+            <h4>Discover</h4>
+            <p>Tell us about your location, brand, or investment thesis. We respond within 48 hours.</p>
+          </li>
+          <li class="step">
+            <div class="step__num">02</div>
+            <h4>Design</h4>
+            <p>We design the machine layout, product mix, and (if applicable) the ad campaign — tailored to your audience.</p>
+          </li>
+          <li class="step">
+            <div class="step__num">03</div>
+            <h4>Deploy</h4>
+            <p>We install, integrate, and go live — usually within 2–3 weeks. No capex, no ops headache for you.</p>
+          </li>
+          <li class="step">
+            <div class="step__num">04</div>
+            <h4>Scale</h4>
+            <p>Real-time dashboards, monthly reporting, and a clear path to expanding across more locations.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ BRAND PARTNERS ============ -->
+    <section class="section section--brands">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Brands on Parrave</span>
+          <h2 class="section__title">Trusted by brands young India loves.</h2>
+          <p class="section__lead">
+            From legacy FMCG to category-defining D2C — our coils stock products people
+            actually want.
+          </p>
+        </div>
+
+        <div class="brand-grid reveal">
+          <div class="brand-chip">Misfits</div>
+          <div class="brand-chip">Monkey Trip</div>
+          <div class="brand-chip">MTR</div>
+          <div class="brand-chip">Chocohut</div>
+          <div class="brand-chip">Nestle</div>
+          <div class="brand-chip">Lays</div>
+          <div class="brand-chip brand-chip--ghost">+ many more</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INVESTORS CTA ============ -->
+    <section class="section section--investor" id="investors">
+      <div class="container">
+        <div class="investor-card reveal">
+          <div class="investor-card__left">
+            <span class="eyebrow">For investors</span>
+            <h2>We're building the operator layer for new-age offline retail.</h2>
+            <p>
+              Parrave Ventures is scaling a hardware + media business across India's premium youth
+              locations. If you invest in consumer, retail-tech, or media networks — let's talk.
+            </p>
+            <a href="#contact" data-prefill="investor" class="btn btn--primary btn--lg">Request investor deck →</a>
+          </div>
+          <div class="investor-card__right">
+            <div class="kpi"><span>Network</span><strong>50+ machines</strong></div>
+            <div class="kpi"><span>Footprint</span><strong>6 premium campuses</strong></div>
+            <div class="kpi"><span>Audience</span><strong>Gen Z, 18–24</strong></div>
+            <div class="kpi"><span>Revenue lines</span><strong>Retail + Media</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__intro reveal">
+          <span class="eyebrow">Let's build together</span>
+          <h2 class="section__title">Tell us why you're here.</h2>
+          <p class="section__lead">
+            One short form. We'll route you to the right team and reply within 48 hours.
+          </p>
+
+          <div class="contact__pills" role="tablist" aria-label="I am a">
+            <button class="pill-btn is-active" data-role="location" type="button">Location partner</button>
+            <button class="pill-btn" data-role="brand" type="button">Brand partner</button>
+            <button class="pill-btn" data-role="investor" type="button">Investor</button>
+            <button class="pill-btn" data-role="other" type="button">Something else</button>
+          </div>
+
+          <div class="contact__direct">
+            <p>Or reach us directly</p>
+            <a href="mailto:hello@parrave.com">hello@parrave.com</a>
+          </div>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <input type="hidden" name="role" id="roleField" value="location" />
+
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Work email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="org">Company / Institution</label>
+              <input id="org" name="org" type="text" autocomplete="organization" />
+            </div>
+          </div>
+
+          <div class="field" id="dynamicField">
+            <label for="message" id="messageLabel">Tell us about your location</label>
+            <textarea id="message" name="message" rows="4" placeholder="Footfall, type of institution, city..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--block">Send →</button>
+          <p class="form-note" id="formNote" hidden>Thanks — we'll be in touch within 48 hours.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="nav__logo">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="logo-text">parrave</span>
+        </a>
+        <p>Smart vending, reimagined for India's next generation.</p>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h5>Company</h5>
+          <a href="#what">What we do</a>
+          <a href="#partners">Partners</a>
+          <a href="#investors">Investors</a>
+        </div>
+        <div>
+          <h5>Partner</h5>
+          <a href="#contact" data-prefill="location">Host a machine</a>
+          <a href="#contact" data-prefill="brand">Advertise</a>
+          <a href="#contact" data-prefill="brand">Coil rentals</a>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <a href="mailto:hello@parrave.com">hello@parrave.com</a>
+          <a href="#contact">Partnership inquiry</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Parrave Ventures. All rights reserved.</span>
+      <span class="footer__tag">Built for the next generation of retail.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
