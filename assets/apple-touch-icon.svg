@@ -5,11 +5,11 @@
       <stop offset="100%" stop-color="#5fd4ff"/>
     </linearGradient>
   </defs>
+  <!-- Dark backdrop so the logo sits inside the iOS rounded squircle -->
   <rect width="180" height="180" rx="40" ry="40" fill="#0b0d0c"/>
-  <rect x="28" y="28" width="124" height="124" rx="28" ry="28" fill="url(#g)"/>
-  <!-- Letter P, scaled -->
-  <path
-    fill="#0b0d0c"
-    transform="translate(28 28) scale(1.9375)"
-    d="M22 14h16.2c6.6 0 11.3 4.7 11.3 11.2 0 6.5-4.7 11.2-11.3 11.2H30v13.6h-8V14zm8 7v8.4h7.4c2.6 0 4.3-1.7 4.3-4.2 0-2.5-1.7-4.2-4.3-4.2H30z"/>
+  <!-- Logo mark, scaled from 24px to ~108px and centered -->
+  <g transform="translate(36 36) scale(4.5)">
+    <rect width="24" height="24" rx="7" ry="7" fill="url(#g)"/>
+    <rect x="6" y="6" width="12" height="12" rx="3" ry="3" fill="#0b0d0c"/>
+  </g>
 </svg>

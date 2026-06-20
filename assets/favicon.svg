@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#c4f542"/>
       <stop offset="100%" stop-color="#5fd4ff"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" ry="14" fill="url(#g)"/>
-  <!-- Letter P -->
-  <path
-    fill="#0b0d0c"
-    d="M22 14h16.2c6.6 0 11.3 4.7 11.3 11.2 0 6.5-4.7 11.2-11.3 11.2H30v13.6h-8V14zm8 7v8.4h7.4c2.6 0 4.3-1.7 4.3-4.2 0-2.5-1.7-4.2-4.3-4.2H30z"/>
+  <!-- Outer rounded gradient tile (matches .logo-mark) -->
+  <rect width="24" height="24" rx="7" ry="7" fill="url(#g)"/>
+  <!-- Inner dark inset (matches .logo-mark::after — inset:6, radius:3) -->
+  <rect x="6" y="6" width="12" height="12" rx="3" ry="3" fill="#0b0d0c"/>
 </svg>
