@@ -1090,7 +1090,7 @@ ul, ol { list-style: none; }
   .hero__metrics { grid-template-columns: repeat(2, 1fr); gap: 18px; }
 
   /* Marquee feels slow on smaller viewports — speed it up */
-  .trust__track { --marquee-duration: 22s; font-size: 16px; gap: 22px; }
+  .trust__track { --marquee-duration: 14s; font-size: 16px; gap: 22px; }
 
   .cards-3,
   .audience-grid,
@@ -1126,10 +1126,15 @@ ul, ol { list-style: none; }
   .hero__metrics { padding-top: 32px; }
   .hero__visual { min-height: 320px; }
   .machine { max-width: 220px; }
-  .machine-badge { font-size: 11px; padding: 8px 12px; }
-  .machine-badge--upi { display: none; } /* keep one badge to avoid clutter */
+  .machine-badge {
+    font-size: 11px;
+    padding: 7px 11px;
+    gap: 6px;
+  }
+  .machine-badge--iot { top: 10%; left: 4%; }
+  .machine-badge--upi { bottom: 18%; right: 4%; }
 
-  .trust__track { --marquee-duration: 16s; font-size: 15px; gap: 18px; }
+  .trust__track { --marquee-duration: 10s; font-size: 15px; gap: 18px; }
 
   .stats__grid { grid-template-columns: 1fr; gap: 20px; }
   .steps { grid-template-columns: 1fr; }
